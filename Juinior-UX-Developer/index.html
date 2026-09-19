@@ -1,1 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parag Manoj Mali | Junior UX/UI Designer, Dublin</title>
+  <meta name="description" content="Junior UX/UI Designer and frontend developer in Dublin. Figma, user flows, wireframes, prototypes, usability testing, design systems and responsive digital experiences." />
+  <meta property="og:title" content="Parag Manoj Mali | Junior UX/UI Designer" />
+  <meta property="og:description" content="I design clear, responsive digital experiences and help bring them from Figma to working product." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0D5C4D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#17312b;
+      --ink-2:#40534f;
+      --muted:#6c7d78;
+      --paper:#fbfcf9;
+      --surface:#ffffff;
+      --soft:#eef5f1;
+      --soft-2:#f5f0e7;
+      --line:#dfe8e3;
+      --brand:#0d5c4d;
+      --brand-2:#174f44;
+      --accent:#f2b85b;
+      --shadow:0 22px 60px rgba(27,62,53,.10);
+      --display:'Manrope',system-ui,sans-serif;
+      --body:'DM Sans',system-ui,sans-serif;
+      --wrap:min(1180px,calc(100% - 40px));
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--body);
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    :focus-visible{outline:3px solid rgba(242,184,91,.8);outline-offset:3px;border-radius:8px}
+
+    .wrap{width:var(--wrap);margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:40;
+      background:rgba(251,252,249,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(223,232,227,.9);
+    }
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:var(--display);font-weight:800;text-decoration:none;letter-spacing:-.03em;font-size:19px}
+    .brand span{color:var(--brand)}
+    .navlinks{display:flex;align-items:center;gap:8px}
+    .navlinks a{font-size:14px;font-weight:600;text-decoration:none;padding:9px 11px;border-radius:999px;color:var(--ink-2)}
+    .navlinks a:hover{background:var(--soft);color:var(--brand)}
+    .menu{display:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 10px;font:inherit}
+
+    .hero{padding:92px 0 70px;position:relative;overflow:hidden}
+    .hero:before{
+      content:'';position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(242,184,91,.25),rgba(242,184,91,0) 68%);
+      right:-170px;top:-150px;pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:68px;align-items:center}
+    .kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--brand);background:var(--soft);padding:8px 12px;border-radius:999px;margin-bottom:22px}
+    .kicker:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
+    h1{font-size:clamp(46px,7vw,84px);line-height:.98;max-width:900px}
+    .hero h1 span{color:var(--brand)}
+    .lede{font-size:clamp(19px,2vw,23px);line-height:1.55;color:var(--ink-2);max-width:720px;margin:28px 0 0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;font-weight:700;font-size:14px;border-radius:12px;padding:13px 17px;border:1px solid var(--line);background:var(--surface)}
+    .btn.primary{background:var(--brand);color:white;border-color:var(--brand)}
+    .btn.primary:hover{background:var(--brand-2)}
+    .btn:hover{transform:translateY(-1px)}
+
+    .snapshot{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);position:relative}
+    .snapshot:after{content:'';position:absolute;right:-10px;bottom:-10px;width:120px;height:120px;border:2px solid var(--accent);border-radius:26px;z-index:-1}
+    .snapshot-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .snapshot-title{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--muted)}
+    .availability{font-size:12px;font-weight:700;color:var(--brand);display:flex;gap:7px;align-items:center}
+    .availability:before{content:'';width:7px;height:7px;border-radius:50%;background:#2ca474;box-shadow:0 0 0 4px rgba(44,164,116,.12)}
+    .snapshot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .stat{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:16px}
+    .stat strong{font-family:var(--display);font-size:24px;display:block;letter-spacing:-.04em}
+    .stat span{font-size:13px;color:var(--muted)}
+    .snapshot-note{margin:16px 2px 0;color:var(--ink-2);font-size:14px}
+
+    section{padding:86px 0}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;align-items:end;margin-bottom:40px}
+    .section-label{font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--brand)}
+    h2{font-size:clamp(34px,4.8vw,58px);line-height:1.05}
+    .section-intro{color:var(--ink-2);max-width:650px;margin:12px 0 0;font-size:17px}
+
+    .work-grid{display:grid;gap:24px}
+    .case{background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 8px 28px rgba(27,62,53,.06)}
+    .case-main{display:grid;grid-template-columns:1fr 1fr;min-height:540px}
+    .case-copy{padding:44px}
+    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;color:var(--brand);margin-bottom:14px}
+    .case h3{font-size:clamp(30px,3.7vw,48px);line-height:1.08;margin-bottom:14px}
+    .case-summary{font-size:18px;color:var(--ink-2);margin:0 0 26px;max-width:550px}
+    .case-block{padding-top:18px;margin-top:18px;border-top:1px solid var(--line)}
+    .case-block strong{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+    .case-block p{margin:0;color:var(--ink-2);font-size:15px}
+    .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+    .chip{font-size:12px;font-weight:700;color:var(--brand);background:var(--soft);border:1px solid #d8e8e0;border-radius:999px;padding:7px 10px}
+    .case-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+
+    .visual{padding:34px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .visual.green{background:linear-gradient(145deg,#dcefe7 0%,#f0f6f2 100%)}
+    .visual.sand{background:linear-gradient(145deg,#f3e6cf 0%,#faf6ef 100%)}
+    .visual:before{content:'';position:absolute;width:290px;height:290px;border-radius:50%;border:1px solid rgba(13,92,77,.16);top:-90px;right:-80px}
+    .device-row{display:flex;align-items:flex-end;justify-content:center;gap:18px;width:100%;position:relative;z-index:1}
+    .browser{width:min(440px,78%);background:#fff;border:1px solid rgba(23,49,43,.14);border-radius:18px;box-shadow:0 20px 44px rgba(23,49,43,.14);overflow:hidden;transform:rotate(-1.2deg)}
+    .browser-top{height:34px;background:#f7f8f6;border-bottom:1px solid #e6eae7;display:flex;align-items:center;gap:5px;padding:0 12px}
+    .browser-top i{width:7px;height:7px;border-radius:50%;background:#c9d1cc}
+    .browser-body{padding:22px;min-height:250px}
+    .mini-nav{height:10px;width:64%;border-radius:999px;background:#d9e4de;margin-bottom:24px}
+    .mini-hero{height:70px;border-radius:14px;background:var(--brand);padding:14px;color:white;font-family:var(--display);font-weight:800;font-size:20px;display:flex;align-items:flex-end}
+    .mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .mini-cards span{height:58px;border-radius:10px;background:#eff4f1;border:1px solid #e1e9e4}
+    .phone{width:145px;background:#101a17;border-radius:28px;padding:7px;box-shadow:0 22px 44px rgba(23,49,43,.22);transform:rotate(4deg);margin-left:-52px}
+    .phone-screen{background:#fff;border-radius:22px;min-height:290px;padding:18px 12px 12px;overflow:hidden}
+    .phone-notch{width:54px;height:10px;background:#101a17;border-radius:0 0 8px 8px;margin:-18px auto 20px}
+    .app-title{font-family:var(--display);font-size:15px;font-weight:800;margin-bottom:12px}
+    .app-pill{height:28px;border-radius:999px;background:#e6f0eb;margin-bottom:9px}
+    .app-card{height:82px;border-radius:14px;background:linear-gradient(135deg,#edf4f0,#d9e8e0);margin-top:10px;border:1px solid #e0e8e3}
+    .app-action{height:34px;border-radius:10px;background:var(--brand);margin-top:12px}
+
+    .case-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+    .case-foot div{padding:20px 26px;border-right:1px solid var(--line)}
+    .case-foot div:last-child{border-right:0}
+    .case-foot strong{display:block;font-size:13px;margin-bottom:4px}
+    .case-foot span{font-size:13px;color:var(--muted)}
+
+    .process{background:var(--soft)}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:180px}
+    .step-num{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:24px}
+    .step h3{font-size:19px;margin-bottom:7px;letter-spacing:-.02em}
+    .step p{margin:0;color:var(--ink-2);font-size:14px}
+
+    .experience-grid{display:grid;grid-template-columns:300px 1fr;gap:56px}
+    .sticky{position:sticky;top:110px;align-self:start}
+    .sticky p{color:var(--ink-2);font-size:15px}
+    .role{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+    .role:last-child{border-bottom:0}
+    .role-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:12px}
+    .role h3{font-size:22px;letter-spacing:-.025em}
+    .org{color:var(--brand);font-weight:700;font-size:14px;margin-top:4px}
+    .date{color:var(--muted);font-size:13px;white-space:nowrap}
+    .role ul{margin:14px 0 0;padding-left:19px;color:var(--ink-2)}
+    .role li{margin:7px 0}
+
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+    .skill-card h3{font-size:18px;margin-bottom:12px;letter-spacing:-.02em}
+    .skill-card p{margin:0;color:var(--ink-2);font-size:14px}
+
+    .about-card{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;background:var(--brand);color:white;border-radius:28px;padding:44px;align-items:center}
+    .about-card h2{color:white}
+    .about-card p{color:rgba(255,255,255,.82);font-size:17px;margin:18px 0 0;max-width:650px}
+    .about-points{display:grid;gap:10px}
+    .about-point{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px}
+    .about-point strong{display:block;font-size:14px;margin-bottom:3px}
+    .about-point span{font-size:13px;color:rgba(255,255,255,.72)}
+
+    .contact{padding-bottom:110px}
+    .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:36px;box-shadow:var(--shadow)}
+    .contact-card h2{font-size:clamp(34px,4.5vw,54px)}
+    .contact-card p{color:var(--ink-2);max-width:600px;margin:12px 0 0}
+    .contact-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+    footer{padding:28px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    .reveal{opacity:0;transform:translateY(18px)}
+    .reveal.in{opacity:1;transform:none;transition:.55s ease}
+
+    @media(max-width:960px){
+      .hero-grid,.case-main,.section-head,.experience-grid,.about-card{grid-template-columns:1fr}
+      .hero{padding-top:70px}
+      .snapshot{max-width:620px}
+      .section-head{gap:15px}
+      .sticky{position:static}
+      .process-grid,.skills-grid{grid-template-columns:1fr 1fr}
+      .case-main{min-height:0}
+      .visual{min-height:430px}
+    }
+    @media(max-width:720px){
+      :root{--wrap:min(100% - 26px,1180px)}
+      .navlinks{display:none;position:absolute;left:13px;right:13px;top:68px;flex-direction:column;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
+      .navlinks.open{display:flex}
+      .navlinks a{padding:11px 13px}
+      .menu{display:inline-flex}
+      h1{font-size:48px}
+      section{padding:68px 0}
+      .case-copy{padding:28px 24px}
+      .visual{padding:24px;min-height:350px}
+      .browser{width:86%}
+      .phone{width:118px;margin-left:-45px}
+      .phone-screen{min-height:240px}
+      .case-foot{grid-template-columns:1fr}
+      .case-foot div{border-right:0;border-bottom:1px solid var(--line)}
+      .case-foot div:last-child{border-bottom:0}
+      .process-grid,.skills-grid{grid-template-columns:1fr}
+      .role-top{flex-direction:column;gap:3px}
+      .contact-card{padding:30px;align-items:flex-start;flex-direction:column}
+      .contact-actions{justify-content:flex-start}
+      .snapshot-grid{grid-template-columns:1fr 1fr}
+      .about-card{padding:30px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal,.reveal.in{opacity:1;transform:none;transition:none}
+      .btn:hover{transform:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top">Parag <span>Mali</span></a>
+      <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker">Junior UX/UI Designer · Dublin</div>
+          <h1>I design simple digital experiences and <span>build them too.</span></h1>
+          <p class="lede">I use Figma, user research and usability testing to turn requirements into clear web and mobile experiences. My frontend background helps me design with real implementation in mind.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">View my work</a>
+            <a class="btn" href="mailto:paragmali25@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/paragmali11/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="snapshot" aria-label="Portfolio snapshot">
+          <div class="snapshot-head">
+            <span class="snapshot-title">Snapshot</span>
+            <span class="availability">Based in Dublin</span>
+          </div>
+          <div class="snapshot-grid">
+            <div class="stat"><strong>2</strong><span>Published customer products</span></div>
+            <div class="stat"><strong>Web + App</strong><span>Responsive product experience</span></div>
+            <div class="stat"><strong>Figma</strong><span>Flows to high fidelity UI</span></div>
+            <div class="stat"><strong>Build</strong><span>React, JavaScript, HTML, CSS</span></div>
+          </div>
+          <p class="snapshot-note">I enjoy the space between user needs, business requirements and what can be built well.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">Selected work</div>
+          <div>
+            <h2>Products I helped take from idea to working experience.</h2>
+            <p class="section-intro">These are real products across website and app experiences. My work covered UX thinking, interface design and frontend implementation.</p>
+          </div>
+        </div>
+
+        <div class="work-grid">
+          <article class="case reveal">
+            <div class="case-main">
+              <div class="case-copy">
+                <div class="eyebrow">Share Your Wear · Website + App</div>
+                <h3>A clearer way to share and rent fashion.</h3>
+                <p class="case-summary">A customer-facing fashion sharing platform that helps people list, discover and rent clothing through a simple digital experience.</p>
+
+                <div class="case-block">
+                  <strong>What I worked on</strong>
+                  <p>I mapped key user flows, created wireframes and high-fidelity screens in Figma, built reusable components and refined responsive layouts for web and mobile.</p>
+                </div>
+                <div class="case-block">
+                  <strong>How I improved it</strong>
+                  <p>I used customer feedback, surveys and usability testing to review navigation, form steps, information hierarchy and the clarity of important actions.</p>
+                </div>
+                <div class="case-block">
+                  <strong>Result</strong>
+                  <p>The product moved into production as a live website and published customer app.</p>
+                </div>
+
+                <div class="chips" aria-label="Share Your Wear skills">
+                  <span class="chip">Figma</span><span class="chip">User flows</span><span class="chip">Wireframes</span><span class="chip">Prototype</span><span class="chip">Design system</span><span class="chip">Usability testing</span><span class="chip">Responsive UI</span>
+                </div>
+                <div class="case-links">
+                  <a class="btn primary" href="https://www.shareyourwear.com" target="_blank" rel="noopener">Visit website</a>
+                  <a class="btn" href="https://www.shareyourwear.com/App/Share-Your-Wear.apk" target="_blank" rel="noopener">View app</a>
+                </div>
+              </div>
+
+              <div class="visual green" aria-label="Stylised preview of Share Your Wear web and mobile interfaces">
+                <div class="device-row">
+                  <div class="browser">
+                    <div class="browser-top"><i></i><i></i><i></i></div>
+                    <div class="browser-body">
+                      <div class="mini-nav"></div>
+                      <div class="mini-hero">Your wardrobe, shared.</div>
+                      <div class="mini-cards"><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+                  <div class="phone">
+                    <div class="phone-screen">
+                      <div class="phone-notch"></div>
+                      <div class="app-title">Share Your Wear</div>
+                      <div class="app-pill"></div>
+                      <div class="app-card"></div>
+                      <div class="app-card"></div>
+                      <div class="app-action"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="case-foot">
+              <div><strong>Role</strong><span>UX/UI + Frontend</span></div>
+              <div><strong>Platforms</strong><span>Responsive website + mobile app</span></div>
+              <div><strong>Focus</strong><span>Simple flows, consistency, usability</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case-main">
+              <div class="case-copy">
+                <div class="eyebrow">Match Your Fit · Website + App</div>
+                <h3>Helping people find the right training partner.</h3>
+                <p class="case-summary">A fitness product that matches people around sport, level, goals and availability so they can find someone suitable to train with.</p>
+
+                <div class="case-block">
+                  <strong>What I worked on</strong>
+                  <p>I designed user journeys for profile setup, discovery, matching and key app interactions. I moved from low-fidelity wireframes to interactive Figma prototypes and high-fidelity UI.</p>
+                </div>
+                <div class="case-block">
+                  <strong>How I improved it</strong>
+                  <p>I used reusable components and variants to keep patterns consistent, then reviewed the flows through usability testing and user feedback before refining the screens.</p>
+                </div>
+                <div class="case-block">
+                  <strong>Result</strong>
+                  <p>The experience was developed into a live website and a published iOS application.</p>
+                </div>
+
+                <div class="chips" aria-label="Match Your Fit skills">
+                  <span class="chip">User journeys</span><span class="chip">Figma</span><span class="chip">High fidelity UI</span><span class="chip">Components</span><span class="chip">Variants</span><span class="chip">Accessibility</span><span class="chip">Mobile UX</span>
+                </div>
+                <div class="case-links">
+                  <a class="btn primary" href="https://matchyourfit.com" target="_blank" rel="noopener">Visit website</a>
+                  <a class="btn" href="https://apps.apple.com/ie/app/match-your-fit/id6800063619" target="_blank" rel="noopener">View App Store</a>
+                </div>
+              </div>
+
+              <div class="visual sand" aria-label="Stylised preview of Match Your Fit web and mobile interfaces">
+                <div class="device-row">
+                  <div class="browser">
+                    <div class="browser-top"><i></i><i></i><i></i></div>
+                    <div class="browser-body">
+                      <div class="mini-nav"></div>
+                      <div class="mini-hero">Find your training partner.</div>
+                      <div class="mini-cards"><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+                  <div class="phone">
+                    <div class="phone-screen">
+                      <div class="phone-notch"></div>
+                      <div class="app-title">Match Your Fit</div>
+                      <div class="app-pill"></div>
+                      <div class="app-card"></div>
+                      <div class="app-card"></div>
+                      <div class="app-action"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="case-foot">
+              <div><strong>Role</strong><span>UX/UI + Frontend</span></div>
+              <div><strong>Platforms</strong><span>Website + iOS app</span></div>
+              <div><strong>Focus</strong><span>Matching flow, hierarchy, consistency</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">How I work</div>
+          <div>
+            <h2>A simple process from problem to usable product.</h2>
+            <p class="section-intro">I keep the process practical. Understand the user, make the flow clear, test it, then refine the interface with development in mind.</p>
+          </div>
+        </div>
+
+        <div class="process-grid reveal">
+          <div class="step"><div class="step-num">01</div><h3>Understand</h3><p>I start with user needs, business requirements and the main task the experience needs to support.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Map</h3><p>I use user flows and journeys to make the path through the product clear before designing screens.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Wireframe</h3><p>I explore layout and information hierarchy at low fidelity so changes are quick and easy.</p></div>
+          <div class="step"><div class="step-num">04</div><h3>Prototype</h3><p>I move into Figma prototypes and high-fidelity UI using reusable components and variants.</p></div>
+          <div class="step"><div class="step-num">05</div><h3>Test</h3><p>I use interviews, surveys, feedback and usability testing to find friction and improve the flow.</p></div>
+          <div class="step"><div class="step-num">06</div><h3>Build and refine</h3><p>I work closely with implementation, check responsive behaviour and improve details after testing.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap experience-grid">
+        <div class="sticky reveal">
+          <div class="section-label">Experience</div>
+          <h2 style="font-size:42px;margin-top:12px">Design thinking with engineering depth.</h2>
+          <p>I have worked across product design, frontend development, APIs and data. That helps me understand both the user experience and the practical side of shipping it.</p>
+        </div>
+
+        <div class="reveal">
+          <article class="role">
+            <div class="role-top">
+              <div><h3>Full Stack Engineer (Contract)</h3><div class="org">Artemee Solutions · Dublin</div></div>
+              <div class="date">Jun 2026 to Present</div>
+            </div>
+            <ul>
+              <li>Design and develop responsive web and mobile experiences using Figma, React, JavaScript, HTML and CSS.</li>
+              <li>Create user flows, user journeys, wireframes, prototypes and high-fidelity UI designs for Share Your Wear and Match Your Fit.</li>
+              <li>Use user research, customer feedback, surveys and usability testing to improve navigation, layouts and product flows.</li>
+              <li>Build reusable components, variants and common design patterns to keep desktop and mobile experiences consistent.</li>
+              <li>Translate product and business requirements into accessible interfaces and working frontend functionality.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-top">
+              <div><h3>Software Engineer Intern</h3><div class="org">Frontier AI · Dublin</div></div>
+              <div class="date">May 2026 to Aug 2026</div>
+            </div>
+            <ul>
+              <li>Built and supported application features for document processing, search and question-answering workflows.</li>
+              <li>Processed and analysed more than 60,000 records using Python, SQL, Pandas and NumPy.</li>
+              <li>Developed and tested REST APIs supporting application workflows and frontend functionality.</li>
+              <li>Reduced bug escape rate by 70 percent through integration testing, regression testing and defect reproduction.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-top">
+              <div><h3>Software Development Intern</h3><div class="org">Autuskey Pvt. Ltd · Pune</div></div>
+              <div class="date">Nov 2024 to Aug 2025</div>
+            </div>
+            <ul>
+              <li>Developed responsive interfaces for a 160+ page client-facing web application using React, JavaScript, HTML and CSS.</li>
+              <li>Built reusable React components and common frontend patterns across multiple application modules.</li>
+              <li>Translated business requirements into working frontend screens and user interactions.</li>
+              <li>Tested and resolved frontend issues affecting usability, responsiveness and application reliability.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">Skills</div>
+          <div><h2>UX skills supported by hands-on development.</h2></div>
+        </div>
+        <div class="skills-grid reveal">
+          <div class="skill-card"><h3>UX and research</h3><p>User flows, user journeys, user research, customer interviews, usability testing, surveys, requirements gathering.</p></div>
+          <div class="skill-card"><h3>UI and prototyping</h3><p>Figma, wireframes, interactive prototypes, high-fidelity UI, responsive design, accessibility, visual hierarchy.</p></div>
+          <div class="skill-card"><h3>Design systems</h3><p>Reusable components, variants, common patterns, consistency across screens, desktop and mobile experiences.</p></div>
+          <div class="skill-card"><h3>Frontend</h3><p>React, TypeScript, JavaScript, HTML, CSS, Redux Toolkit and responsive implementation.</p></div>
+          <div class="skill-card"><h3>Data and AI products</h3><p>Basic data analytics, SQL, Python, Pandas and experience supporting AI-based application workflows.</p></div>
+          <div class="skill-card"><h3>Engineering</h3><p>Git, GitHub, REST APIs, API integration, testing, debugging, PostgreSQL and MySQL.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="about-card reveal">
+          <div>
+            <div class="section-label" style="color:#f2d49d">About me</div>
+            <h2 style="margin-top:12px">I care about clear interfaces and the details that make them work.</h2>
+            <p>I am based in Dublin and completed an MSc in Computer Science at University College Dublin. My background started in software engineering, but the part I enjoy most is understanding what users need, shaping the experience and making it simple to use.</p>
+          </div>
+          <div class="about-points">
+            <div class="about-point"><strong>MSc Computer Science</strong><span>University College Dublin · 2025 to 2026</span></div>
+            <div class="about-point"><strong>BE Computer Engineering</strong><span>MMIT · 2021 to 2024</span></div>
+            <div class="about-point"><strong>Leadership</strong><span>Led 25+ team members as Student Association President</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div>
+            <div class="section-label">Contact</div>
+            <h2 style="margin-top:10px">Let’s build a better experience.</h2>
+            <p>I am based in Dublin and interested in junior UX/UI and product design opportunities where I can contribute across research, interface design and implementation.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:paragmali25@gmail.com">paragmali25@gmail.com</a>
+            <a class="btn" href="https://www.linkedin.com/in/paragmali11/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/maliparag11" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="wrap">
+    <footer>
+      <span>Parag Manoj Mali · UX/UI Designer + Frontend Developer</span>
+      <span>Dublin, Ireland</span>
+    </footer>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const nav = document.getElementById('navlinks');
+    menu.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('open');
+        menu.setAttribute('aria-expanded','false');
+      });
+    });
+
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  </script>
+</body>
+</html>
