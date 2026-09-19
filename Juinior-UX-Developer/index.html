@@ -181,6 +181,201 @@
     .reveal{opacity:0;transform:translateY(18px)}
     .reveal.in{opacity:1;transform:none;transition:.55s ease}
 
+
+    /* ---------- Branded case studies ---------- */
+    .brand-visual{
+      min-height:600px;
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    /* Share Your Wear */
+    .share-wear-case{
+      border-color:#e8ded5;
+      box-shadow:0 18px 55px rgba(60,44,36,.08);
+    }
+    .share-wear-case .case-copy{
+      background:#fffdf9;
+    }
+    .share-wear-case .eyebrow{color:#6d4a42}
+    .share-wear-case .chip{
+      color:#5b413b;
+      background:#f7eee8;
+      border-color:#ead9cf;
+    }
+    .share-wear-case .btn.primary{
+      background:#243b32;
+      border-color:#243b32;
+    }
+    .share-wear-case .btn.primary:hover{background:#182b24}
+    .share-wear-case .case-foot{
+      background:#fffaf5;
+      border-color:#eadfd7;
+    }
+
+    .syw-visual{
+      background:
+        linear-gradient(140deg,rgba(255,255,255,.24),rgba(255,255,255,0) 40%),
+        linear-gradient(145deg,#efe4db 0%,#f8f3ec 52%,#e3eee8 100%);
+      color:#2d2926;
+    }
+    .syw-glow{
+      position:absolute;border-radius:999px;filter:blur(2px);z-index:-1;
+      border:1px solid rgba(80,61,51,.10);
+    }
+    .syw-glow-one{width:350px;height:350px;right:-110px;top:-115px;background:rgba(255,255,255,.34)}
+    .syw-glow-two{width:250px;height:250px;left:-120px;bottom:-90px;background:rgba(76,110,94,.10)}
+    .syw-brandbar{display:flex;align-items:center;gap:12px;position:relative;z-index:3}
+    .syw-brandbar img{width:42px;height:42px;object-fit:contain;border-radius:12px;background:#fff;padding:4px;box-shadow:0 8px 20px rgba(53,42,35,.08)}
+    .syw-brandbar strong{display:block;font-family:var(--display);font-size:15px;letter-spacing:-.02em}
+    .syw-brandbar span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#766860;margin-top:1px}
+
+    .syw-stage{position:relative;min-height:480px;margin-top:12px}
+    .syw-gallery{position:absolute;inset:30px 138px 38px 0;display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:12px}
+    .syw-look{position:relative;margin:0;border-radius:20px;overflow:hidden;background:#ddd0c7;box-shadow:0 20px 40px rgba(69,48,37,.14);border:1px solid rgba(255,255,255,.6)}
+    .syw-look-a{grid-row:1 / span 2;transform:rotate(-2deg)}
+    .syw-look-b{transform:translateY(18px) rotate(2deg)}
+    .syw-look-c{transform:translateY(8px) rotate(-1deg)}
+    .syw-look img{width:100%;height:100%;object-fit:cover}
+    .syw-look figcaption{
+      position:absolute;left:12px;bottom:12px;
+      background:rgba(255,253,249,.90);backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.7);
+      padding:6px 9px;border-radius:999px;
+      font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    }
+
+    .syw-phone{
+      position:absolute;right:0;bottom:20px;width:168px;
+      background:#1d2823;border-radius:34px;padding:7px;
+      box-shadow:0 30px 50px rgba(32,39,35,.24);
+      transform:rotate(3deg);
+      z-index:4;
+    }
+    .syw-phone-screen{background:#fffdfa;border-radius:27px;min-height:350px;padding:16px 12px 12px;overflow:hidden}
+    .syw-phone-top{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:800;color:#2c342f}
+    .syw-phone-top img{width:22px;height:22px;object-fit:contain}
+    .syw-phone-top b{margin-left:auto;font-size:16px;font-weight:500}
+    .syw-search{margin:13px 0 12px;background:#f2eee9;border-radius:10px;padding:8px 9px;font-size:8px;color:#8c7e75}
+    .syw-app-title{font-family:var(--display);font-size:17px;font-weight:800;line-height:1.05;margin-bottom:10px;color:#26332e}
+    .syw-app-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .syw-app-grid div{background:#f5f0ea;border-radius:11px;overflow:hidden;border:1px solid #eee4dc}
+    .syw-app-grid img{width:100%;height:102px;object-fit:cover}
+    .syw-app-grid span{display:block;font-size:7px;font-weight:800;padding:6px 5px;color:#514741}
+    .syw-app-nav{display:flex;justify-content:space-between;align-items:center;margin-top:13px;padding-top:10px;border-top:1px solid #efe8e2;color:#3f544a;font-size:12px}
+    .syw-message{
+      position:absolute;left:18px;bottom:8px;z-index:5;
+      background:#253b32;color:white;border-radius:16px;padding:13px 16px;
+      box-shadow:0 14px 30px rgba(37,59,50,.18);
+    }
+    .syw-message span{display:block;font-size:8px;letter-spacing:.14em;font-weight:800;color:#d7e3dd}
+    .syw-message strong{display:block;font-family:var(--display);font-size:17px;margin-top:2px}
+
+    /* Match Your Fit */
+    .match-fit-case{
+      border-color:#d9dfed;
+      box-shadow:0 18px 55px rgba(13,23,44,.10);
+    }
+    .match-fit-case .case-copy{background:#fbfcff}
+    .match-fit-case .eyebrow{color:#465cf5}
+    .match-fit-case .chip{
+      color:#283a9c;
+      background:#edf0ff;
+      border-color:#dce2ff;
+    }
+    .match-fit-case .btn.primary{
+      background:#141c35;
+      border-color:#141c35;
+    }
+    .match-fit-case .btn.primary:hover{background:#0d1327}
+    .match-fit-case .case-foot{
+      background:#f7f8ff;
+      border-color:#e2e6f2;
+    }
+
+    .myf-visual{
+      background:
+        radial-gradient(circle at 84% 14%,rgba(199,255,84,.16),transparent 27%),
+        linear-gradient(145deg,#0e1428 0%,#151f3e 56%,#0b1020 100%);
+      color:#fff;
+    }
+    .myf-grid-lines{
+      position:absolute;inset:0;z-index:-1;opacity:.11;
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+    .myf-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative;z-index:3}
+    .myf-wordmark{display:flex;align-items:center;gap:10px;font-family:var(--display)}
+    .myf-wordmark strong{font-size:15px}
+    .myf-mark{
+      display:grid;place-items:center;width:38px;height:38px;border-radius:12px;
+      background:#d7ff59;color:#121a2e;font-size:11px;font-weight:900;letter-spacing:-.04em;
+      box-shadow:0 8px 24px rgba(215,255,89,.18);
+    }
+    .myf-live{font-size:9px;font-weight:900;letter-spacing:.14em;color:#d7ff59;border:1px solid rgba(215,255,89,.35);padding:7px 9px;border-radius:999px}
+    .myf-stage{position:relative;min-height:485px;margin-top:12px}
+    .myf-dashboard{
+      position:absolute;left:0;top:52px;width:78%;
+      background:rgba(255,255,255,.97);color:#121827;border-radius:22px;
+      padding:20px;box-shadow:0 26px 60px rgba(0,0,0,.30);
+      transform:rotate(-1.5deg);
+    }
+    .myf-dashboard-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+    .myf-dashboard-head span{display:block;font-size:8px;font-weight:900;letter-spacing:.15em;color:#637090}
+    .myf-dashboard-head strong{display:block;font-family:var(--display);font-size:20px;line-height:1.12;max-width:250px;margin-top:5px}
+    .myf-dashboard-head b{
+      display:grid;place-items:center;width:62px;height:62px;border-radius:50%;
+      background:#d7ff59;color:#121827;font-family:var(--display);font-size:19px;
+    }
+    .myf-sports{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+    .myf-sports span{font-size:8px;font-weight:900;letter-spacing:.10em;padding:7px 9px;border-radius:999px;background:#141c35;color:white}
+    .myf-sports span:first-child{background:#d7ff59;color:#141c35}
+    .myf-signals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+    .myf-signals div{padding:11px;border-radius:12px;background:#f3f5fa;border:1px solid #e7eaf1}
+    .myf-signals small{display:block;font-size:7px;font-weight:900;letter-spacing:.12em;color:#7c86a0}
+    .myf-signals strong{display:block;font-size:11px;margin-top:3px}
+    .myf-nearby{margin-top:11px;font-size:9px;color:#66718e;font-weight:700}
+    .myf-nearby span{color:#4b60ff}
+
+    .myf-phone{
+      position:absolute;right:-3px;bottom:8px;width:178px;
+      background:#070a12;border-radius:36px;padding:7px;
+      box-shadow:0 30px 60px rgba(0,0,0,.46);
+      transform:rotate(3.2deg);z-index:4;
+    }
+    .myf-phone-screen{min-height:355px;border-radius:29px;background:#f9faff;color:#10172b;padding:17px 13px 14px;overflow:hidden}
+    .myf-phone-head{display:flex;justify-content:space-between;font-size:10px;font-weight:900;margin-bottom:13px}
+    .myf-profile{display:flex;align-items:center;gap:9px;background:white;border:1px solid #e8eaf2;border-radius:16px;padding:10px;box-shadow:0 8px 18px rgba(20,28,53,.07)}
+    .myf-avatar{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#5f75ff,#2b3fab);color:white;display:grid;place-items:center;font-size:10px;font-weight:900}
+    .myf-profile-copy{min-width:0;flex:1}
+    .myf-profile-copy strong{display:block;font-size:10px}
+    .myf-profile-copy span{display:block;font-size:7px;color:#7a849c;margin-top:2px}
+    .myf-profile em{font-style:normal;font-size:10px;font-weight:900;background:#d7ff59;padding:6px;border-radius:8px}
+    .myf-tags{display:flex;gap:5px;flex-wrap:wrap;margin:11px 0}
+    .myf-tags span{font-size:7px;font-weight:800;padding:6px 7px;border-radius:999px;background:#edf0ff;color:#3d51cf}
+    .myf-goal{border-radius:15px;background:#141c35;color:white;padding:13px}
+    .myf-goal small{font-size:7px;letter-spacing:.13em;color:#aeb8d6;font-weight:900}
+    .myf-goal strong{display:block;font-size:13px;margin-top:3px}
+    .myf-goal p{font-size:8px;line-height:1.45;color:#c3cbe1;margin:6px 0 0}
+    .myf-actions{display:flex;justify-content:center;gap:12px;margin-top:16px}
+    .myf-actions button{width:42px;height:42px;border-radius:50%;border:1px solid #e0e4ef;background:white;color:#77819a;font-size:18px}
+    .myf-actions .yes{background:#d7ff59;color:#151d32;border-color:#d7ff59}
+    .myf-callout{
+      position:absolute;left:18px;bottom:4px;z-index:5;
+      background:#d7ff59;color:#10172b;border-radius:15px;padding:12px 15px;
+      box-shadow:0 15px 30px rgba(0,0,0,.22);
+    }
+    .myf-callout span{display:block;font-size:7px;letter-spacing:.13em;font-weight:900;color:#394321}
+    .myf-callout strong{display:block;font-family:var(--display);font-size:17px;margin-top:2px}
+
     @media(max-width:960px){
       .hero-grid,.case-main,.section-head,.experience-grid,.about-card{grid-template-columns:1fr}
       .hero{padding-top:70px}
@@ -189,6 +384,13 @@
       .sticky{position:static}
       .process-grid,.skills-grid{grid-template-columns:1fr 1fr}
       .case-main{min-height:0}
+
+      .brand-visual{min-height:520px}
+      .syw-stage,.myf-stage{min-height:430px}
+      .syw-gallery{inset:34px 120px 46px 0}
+      .syw-phone{width:150px}
+      .myf-dashboard{width:80%}
+      .myf-phone{width:158px}
       .visual{min-height:430px}
     }
     @media(max-width:720px){
@@ -213,6 +415,37 @@
       .contact-actions{justify-content:flex-start}
       .snapshot-grid{grid-template-columns:1fr 1fr}
       .about-card{padding:30px}
+
+      .brand-visual{padding:22px;min-height:490px}
+      .syw-brandbar span{font-size:9px}
+      .syw-stage,.myf-stage{min-height:405px}
+      .syw-gallery{inset:24px 82px 52px 0;gap:8px}
+      .syw-look{border-radius:14px}
+      .syw-look figcaption{font-size:7px;padding:5px 7px;left:7px;bottom:7px}
+      .syw-phone{width:118px;border-radius:25px;padding:5px;bottom:18px}
+      .syw-phone-screen{min-height:268px;border-radius:20px;padding:12px 8px 8px}
+      .syw-phone-top img{width:16px;height:16px}
+      .syw-phone-top{font-size:7px}
+      .syw-search{font-size:6px;padding:6px;margin:9px 0}
+      .syw-app-title{font-size:12px}
+      .syw-app-grid img{height:72px}
+      .syw-app-grid span{font-size:6px}
+      .syw-message{left:6px;bottom:8px;padding:10px 12px}
+      .syw-message strong{font-size:13px}
+      .myf-topline{align-items:flex-start}
+      .myf-live{font-size:7px}
+      .myf-dashboard{width:82%;top:42px;padding:14px}
+      .myf-dashboard-head strong{font-size:14px;max-width:170px}
+      .myf-dashboard-head b{width:48px;height:48px;font-size:14px}
+      .myf-signals div{padding:8px}
+      .myf-phone{width:126px;border-radius:27px;padding:5px}
+      .myf-phone-screen{min-height:275px;border-radius:22px;padding:12px 8px}
+      .myf-avatar{width:32px;height:32px}
+      .myf-profile{padding:7px;gap:6px}
+      .myf-goal{padding:9px}
+      .myf-actions button{width:34px;height:34px}
+      .myf-callout{left:5px;bottom:7px;padding:10px 12px}
+      .myf-callout strong{font-size:13px}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
@@ -277,7 +510,7 @@
         </div>
 
         <div class="work-grid">
-          <article class="case reveal">
+          <article class="case reveal share-wear-case">
             <div class="case-main">
               <div class="case-copy">
                 <div class="eyebrow">Share Your Wear · Website + App</div>
@@ -306,25 +539,54 @@
                 </div>
               </div>
 
-              <div class="visual green" aria-label="Stylised preview of Share Your Wear web and mobile interfaces">
-                <div class="device-row">
-                  <div class="browser">
-                    <div class="browser-top"><i></i><i></i><i></i></div>
-                    <div class="browser-body">
-                      <div class="mini-nav"></div>
-                      <div class="mini-hero">Your wardrobe, shared.</div>
-                      <div class="mini-cards"><span></span><span></span><span></span></div>
+              <div class="brand-visual syw-visual" aria-label="Share Your Wear branded product preview">
+                <div class="syw-glow syw-glow-one"></div>
+                <div class="syw-glow syw-glow-two"></div>
+
+                <div class="syw-brandbar">
+                  <img src="https://www.shareyourwear.com/assets/Logo/shareyourwearicon.png" alt="" loading="lazy" />
+                  <div>
+                    <strong>Share Your Wear</strong>
+                    <span>Circular fashion · website + app</span>
+                  </div>
+                </div>
+
+                <div class="syw-stage">
+                  <div class="syw-gallery" aria-hidden="true">
+                    <figure class="syw-look syw-look-a">
+                      <img src="https://www.shareyourwear.com/assets/featured-dresses/featured-dress1.png" alt="" loading="lazy" />
+                      <figcaption>Statement</figcaption>
+                    </figure>
+                    <figure class="syw-look syw-look-b">
+                      <img src="https://www.shareyourwear.com/assets/featured-dresses/featured-dress2.png" alt="" loading="lazy" />
+                      <figcaption>Occasion</figcaption>
+                    </figure>
+                    <figure class="syw-look syw-look-c">
+                      <img src="https://www.shareyourwear.com/assets/featured-dresses/featured-dress3.png" alt="" loading="lazy" />
+                      <figcaption>Shared style</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="syw-phone" aria-hidden="true">
+                    <div class="syw-phone-screen">
+                      <div class="syw-phone-top">
+                        <img src="https://www.shareyourwear.com/assets/Logo/shareyourwearicon.png" alt="" loading="lazy" />
+                        <span>Wardrobe</span>
+                        <b>♡</b>
+                      </div>
+                      <div class="syw-search">Search the wardrobe</div>
+                      <div class="syw-app-title">Find your next look.</div>
+                      <div class="syw-app-grid">
+                        <div><img src="https://www.shareyourwear.com/assets/featured-dresses/featured-dress4.png" alt="" loading="lazy" /><span>Night out</span></div>
+                        <div><img src="https://www.shareyourwear.com/assets/featured-dresses/featured-dress5.png" alt="" loading="lazy" /><span>Occasion</span></div>
+                      </div>
+                      <div class="syw-app-nav"><span>⌂</span><span>⌕</span><span>＋</span><span>♡</span><span>○</span></div>
                     </div>
                   </div>
-                  <div class="phone">
-                    <div class="phone-screen">
-                      <div class="phone-notch"></div>
-                      <div class="app-title">Share Your Wear</div>
-                      <div class="app-pill"></div>
-                      <div class="app-card"></div>
-                      <div class="app-card"></div>
-                      <div class="app-action"></div>
-                    </div>
+
+                  <div class="syw-message">
+                    <span>YOUR WARDROBE, SHARED.</span>
+                    <strong>Rent more. Waste less.</strong>
                   </div>
                 </div>
               </div>
@@ -336,7 +598,7 @@
             </div>
           </article>
 
-          <article class="case reveal">
+          <article class="case reveal match-fit-case">
             <div class="case-main">
               <div class="case-copy">
                 <div class="eyebrow">Match Your Fit · Website + App</div>
@@ -365,25 +627,54 @@
                 </div>
               </div>
 
-              <div class="visual sand" aria-label="Stylised preview of Match Your Fit web and mobile interfaces">
-                <div class="device-row">
-                  <div class="browser">
-                    <div class="browser-top"><i></i><i></i><i></i></div>
-                    <div class="browser-body">
-                      <div class="mini-nav"></div>
-                      <div class="mini-hero">Find your training partner.</div>
-                      <div class="mini-cards"><span></span><span></span><span></span></div>
+              <div class="brand-visual myf-visual" aria-label="Match Your Fit branded matching experience preview">
+                <div class="myf-grid-lines"></div>
+                <div class="myf-topline">
+                  <div class="myf-wordmark"><span class="myf-mark">MF</span><strong>Match Your Fit</strong></div>
+                  <span class="myf-live">LIVE IN IRELAND</span>
+                </div>
+
+                <div class="myf-stage">
+                  <div class="myf-dashboard" aria-hidden="true">
+                    <div class="myf-dashboard-head">
+                      <div>
+                        <span>TRAINING PARTNER MATCH</span>
+                        <strong>Find someone who fits your training.</strong>
+                      </div>
+                      <b>92%</b>
+                    </div>
+                    <div class="myf-sports">
+                      <span>RUN</span><span>LIFT</span><span>CYCLE</span><span>SWIM</span><span>PADEL</span>
+                    </div>
+                    <div class="myf-signals">
+                      <div><small>SPORT</small><strong>Running</strong></div>
+                      <div><small>LEVEL</small><strong>Intermediate</strong></div>
+                      <div><small>GOAL</small><strong>Consistency</strong></div>
+                      <div><small>FREE</small><strong>Evenings</strong></div>
+                    </div>
+                    <div class="myf-nearby"><span>●</span> Matches nearby · Dublin</div>
+                  </div>
+
+                  <div class="myf-phone" aria-hidden="true">
+                    <div class="myf-phone-screen">
+                      <div class="myf-phone-head"><span>Match</span><b>•••</b></div>
+                      <div class="myf-profile">
+                        <div class="myf-avatar">PM</div>
+                        <div class="myf-profile-copy">
+                          <strong>Training partner</strong>
+                          <span>2.4 km away</span>
+                        </div>
+                        <em>92%</em>
+                      </div>
+                      <div class="myf-tags"><span>Running</span><span>Intermediate</span><span>Evenings</span></div>
+                      <div class="myf-goal"><small>GOAL</small><strong>Build consistency</strong><p>Matched on sport, level, goals and availability.</p></div>
+                      <div class="myf-actions"><button>×</button><button class="yes">♥</button></div>
                     </div>
                   </div>
-                  <div class="phone">
-                    <div class="phone-screen">
-                      <div class="phone-notch"></div>
-                      <div class="app-title">Match Your Fit</div>
-                      <div class="app-pill"></div>
-                      <div class="app-card"></div>
-                      <div class="app-card"></div>
-                      <div class="app-action"></div>
-                    </div>
+
+                  <div class="myf-callout">
+                    <span>SPORT + LEVEL + GOALS + AVAILABILITY</span>
+                    <strong>Stop training alone.</strong>
                   </div>
                 </div>
               </div>
